@@ -1,31 +1,42 @@
 package com.WebApp.domain;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.WebApp.security.Authority;
 
 @Entity
-@javax.persistence.Table(name="users")
-public class User 
+@Table(name="users")
+public class User
 {
-	private Integer id;
-	private String usernamee;
+	private Long id;
+	private String username;
 	private String password;
 	private String name;
+	private Set<Authority> authorities = new HashSet<>();
+	
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getUsernamee() {
-		return usernamee;
+	public String getUsername() {
+		return username;
 	}
-	public void setUsernamee(String usernamee) {
-		this.usernamee = usernamee;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getPassword() {
 		return password;
@@ -39,6 +50,20 @@ public class User
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	@OneToMany( cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "user")
+	public Set<Authority> getAuthorities() {
+		return authorities;
+	}
+	public void setAuthorities(Set<Authority> authorities) {
+		this.authorities = authorities;
+	}
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", name=" + name
+				+ ", authorities=" + authorities + "]";
+	}
+	
 
 	
 
