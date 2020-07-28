@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.WebApp.domain.Role;
 import com.WebApp.domain.User;
+import com.WebApp.services.RoleService;
 import com.fasterxml.jackson.annotation.JsonView;
 
 @RestController

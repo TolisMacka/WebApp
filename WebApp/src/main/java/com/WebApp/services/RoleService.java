@@ -1,4 +1,4 @@
-package com.WebApp.web;
+package com.WebApp.services;
 
 import java.util.List;
 

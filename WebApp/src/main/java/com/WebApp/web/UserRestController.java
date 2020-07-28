@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.WebApp.domain.Role;
 import com.WebApp.domain.User;
+import com.WebApp.services.RoleService;
 import com.WebApp.services.UserService;
 import com.fasterxml.jackson.annotation.JsonView;
 

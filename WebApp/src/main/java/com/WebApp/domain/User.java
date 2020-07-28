@@ -46,7 +46,7 @@ public class User {
 	@ManyToOne
 	private Role role;
 
-	public User() {
+	protected User() {
 	}
 
 	public User(String username) {
