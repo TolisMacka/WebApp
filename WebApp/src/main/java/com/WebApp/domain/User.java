@@ -1,77 +1,143 @@
 package com.WebApp.domain;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-import javax.persistence.CascadeType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.ManyToOne;
 
-import com.WebApp.security.Authority;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import com.fasterxml.jackson.annotation.JsonView;
 
 @Entity
-@Table(name="users")
-public class User
-{
+public class User {
+
+	public interface Basic {
+	}
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@JsonView(Basic.class)
 	private Long id;
-	private String username;
-	private String password;
+	@JsonView(Basic.class)
+	private String email;
+	@JsonView(Basic.class)
 	private String name;
-	private Set<Authority> authorities = new HashSet<>();
-	private Set<Product> products = new HashSet<>();
-	
-	
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@JsonView(Basic.class)
+	private String firstName;
+	@JsonView(Basic.class)
+	private String lastName;
+
+	private String passwordHash;
+
+	// do not put @JsonIgnore
+	@JsonView(Basic.class)
+	@ElementCollection(fetch = FetchType.EAGER)
+	private List<String> roles;
+
+	@JsonView(Basic.class)
+	@ManyToOne
+	private Role role;
+
+	public User() {
+	}
+
+	public User(String username) {
+		this.name = username;
+	}
+
+	public User(String email, String name, String firstName, String lastName, String passwordHash, Role role,
+			String... roles) {
+		super();
+		this.email = email;
+		this.name = name;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.passwordHash = new BCryptPasswordEncoder().encode(passwordHash);
+		this.role = role;
+		this.roles = new ArrayList<>(Arrays.asList(roles));
+	}
+
+	public User(String email, String name, String firstName, String lastName, String passwordHash, String... roles) {
+		super();
+		this.email = email;
+		this.name = name;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.passwordHash = new BCryptPasswordEncoder().encode(passwordHash);
+		this.roles = new ArrayList<>(Arrays.asList(roles));
+	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getUsername() {
-		return username;
+
+	public String getEmail() {
+		return email;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	@OneToMany(cascade=CascadeType.PERSIST, fetch=FetchType.LAZY, mappedBy = "user")
-	public Set<Product> getProducts() {
-		return products;
-	}
-	public void setProducts(Set<Product> products) {
-		this.products = products;
-	}
-	@OneToMany( cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "user")
-	public Set<Authority> getAuthorities() {
-		return authorities;
-	}
-	public void setAuthorities(Set<Authority> authorities) {
-		this.authorities = authorities;
-	}
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", name=" + name
-				+ ", authorities=" + authorities + "]";
-	}
-	
 
-	
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getPasswordHash() {
+		return passwordHash;
+	}
+
+	public void setPasswordHash(String passwordHash) {
+		this.passwordHash = new BCryptPasswordEncoder().encode(passwordHash);
+		;
+	}
+
+	public List<String> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
 
 }

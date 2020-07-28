@@ -12,8 +12,8 @@ import com.WebApp.domain.User;
 
 @Entity
 public class Authority implements GrantedAuthority {
-	
-	private static final long serialVersionUID = -1865036931346898604L;
+
+	private static final long serialVersionUID = 1272548942962614584L;
 	private Long id;
 	private String authority;
 	private User user;
@@ -27,7 +27,8 @@ public class Authority implements GrantedAuthority {
 		this.authority = authority;
 	}
 
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Long getId() {
 		return id;
 	}
@@ -35,7 +36,7 @@ public class Authority implements GrantedAuthority {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	@ManyToOne()
 	public User getUser() {
 		return user;
@@ -44,7 +45,5 @@ public class Authority implements GrantedAuthority {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
-	
 
 }

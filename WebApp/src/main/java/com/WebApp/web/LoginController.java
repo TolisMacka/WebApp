@@ -18,17 +18,17 @@ public class LoginController {
 	public String login() {
 		return "login";
 	}
-	
+
 	@GetMapping("/register")
-	public String register (ModelMap model) {
+	public String register(ModelMap model) {
 		model.put("user", new User());
 		return "register";
 	}
-	
+
 	@PostMapping("/register")
-	public String registerPost (User user) {
+	public String registerPost(User user) {
 		userService.save(user);
-		
+
 		return "redirect:/login";
 	}
 }
