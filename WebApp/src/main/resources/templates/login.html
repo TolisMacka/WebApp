@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+  <link rel="import" href="components/html_head.html">
+</head>
+
+<body>
+  <link rel="import" href="components/header.html">
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <h1>Please Log In</h1>
+      <form id="login-form" action="" method="POST">
+        <div class="form-group">
+          <label for="login-form_username">Username</label>
+          <input type="text" name="username" class="form-control" id="login-form_username" placeholder="Enter Username"
+            required>
+        </div>
+        <div class="form-group">
+          <label for="login-form_password">Password</label>
+          <input type="password" name="password" class="form-control" id="login-form_password"
+            placeholder="Enter Password" required>
+        </div>
+        <div class="row">
+          <div class="col-6"><input type="hidden" name="_csrf" value="{{token}}" />
+            <button type="submit" class="btn btn-primary" id="login-form_button">Login</button>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="login-form_remember">
+              <label class="form-check-label" for="login-form_remember">Remember me</label>
+            </div>
+          </div>
+          <div class="col-6" align="right">
+            <button type="cancel" class="btn btn-primary" id="login-form_button">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
