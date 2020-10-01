@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.WebApp.UserSession;
 import com.WebApp.domain.User;
+import com.WebApp.security.UserSession;
 import com.WebApp.services.UserService;
 
 @Controller
@@ -35,7 +35,7 @@ public class RegisterController {
 		userSession.setIsLogggedIn(true);
 		userSession.setUsername(newUser.getName());
 
-		return "/";
+		return "/index";
 	}
 
 }

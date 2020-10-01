@@ -6,13 +6,12 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-import com.WebApp.UserRepositoryAuthenticationProvider;
-
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	public UserRepositoryAuthenticationProvider authenticationProvider;
+	
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -28,6 +27,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		// Private pages
 		http.authorizeRequests().antMatchers("/admin").hasAnyRole("ADMIN");
 		http.authorizeRequests().antMatchers("/logout").authenticated();
+		http.authorizeRequests().antMatchers("/dashboard").hasAnyRole("ADMIN");
 
 		// Login form
 		http.formLogin().loginPage("/login");

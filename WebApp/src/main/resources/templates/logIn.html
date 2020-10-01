@@ -1,0 +1,84 @@
+<html>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+
+<meta charset="utf-8">
+{{>components/html_head}}
+<title>Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- CSS -->
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/supersized.css">
+<link rel="stylesheet" href="/assets/css/loginStyle.css">
+<section id="header">
+	<div class="header container">
+		<div class="nav-bar">
+			<div class="brand">
+				<a href="#hero">
+					<h1>
+						CA<span>S</span>UAL<span>S</span>
+					</h1>
+				</a>
+			</div>
+			<div class="nav-list">
+				<div class="hamburger">
+					<div class="bar"></div>
+				</div>
+				<ul>
+					<li><a href="/" data-after="Home">Home</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+</head>
+
+<body>
+
+	<div class="page-container">
+		<h1>
+			<span>W</span>elcome
+		</h1>
+		<form id="login-form" action="" method="post">
+			<div class="form-group">
+				<input type="text" name="username" class="form-control"
+					id="login-form_username" placeholder="Enter Username"
+					autocomplete="off" readonly
+					onfocus="this.removeAttribute('readonly');" required>
+			</div>
+			<div class="form-group">
+				<input type="password" name="password" class="form-control"
+					id="login-form_password" placeholder="Enter Password"
+					autocomplete="off" readonly
+					onfocus="this.removeAttribute('readonly');" required> <input
+					type="hidden" name="_csrf" value="{{token}}" />
+				<button type="submit" class="submit_button" id="login-form_button">
+					Log <span>in</span>
+				</button>
+			</div>
+		</form>
+		<div class="connect">
+			<h1>
+				<span>register</span> with
+			</h1>
+			<p>
+				<a class="facebook" href=""></a> <a class="twitter" href=""></a> <a
+					class="reddit" href=""></a>
+			</p>
+		</div>
+	</div>
+
+	<!-- Javascript -->
+	<script src="/assets/js/jquery-3.4.1.min.js"></script>
+	<script src="/assets/js/supersized.3.2.7.min.js"></script>
+	<script src="/assets/js/supersized-init.js"></script>
+	<script src="/assets/js/scripts.js"></script>
+	<script src="/assets/js/app.js"></script>
+
+</body>
+<div style="text-align: center;"></div>
+
+</html>

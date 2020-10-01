@@ -3,7 +3,6 @@ package com.WebApp.domain;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,9 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
 import com.fasterxml.jackson.annotation.JsonView;
 
 @Entity
@@ -51,6 +48,15 @@ public class User {
 
 	public User(String username) {
 		this.name = username;
+	}
+
+	public User(String email, String name, String firstName, String lastName, String password, String role) {
+		this.email = email;
+		this.name = name;
+		this.passwordHash = new BCryptPasswordEncoder().encode(password);
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.roles = new ArrayList<>(Arrays.asList(role));
 	}
 
 	public User(String email, String name, String firstName, String lastName, String passwordHash, Role role,
