@@ -12,21 +12,18 @@
 	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 	crossorigin="anonymous"></script>
 <script>
-	window.jQuery
-			|| document
-					.write('<script src="/assets/js/jquery-3.4.1.min.js"><\/script>')
+	window.jQuery || document.write('<script src="/assets/js/jquery-3.4.1.min.js"><\/script>')
 </script>
 <script src="/assets/js/register.js"></script>
 
 <!-- CSS -->
 <link rel="stylesheet" href="/assets/css/style.css">
-<link rel="stylesheet" href="/assets/css/supersized.css">
 <link rel="stylesheet" href="/assets/css/loginStyle.css">
 <section id="header">
 	<div class="header container">
 		<div class="nav-bar">
 			<div class="brand">
-				<a href="#hero">
+				<a href="/index">
 					<h1>
 						CA<span>S</span>UAL<span>S</span>
 					</h1>
@@ -49,7 +46,7 @@
 
 	<div class="page-container">
 		<h1>
-			<span>W</span>elcome
+			Welcome
 		</h1>
 		<form class="form-horizontal" action="registerUser" method="POST">
 
@@ -66,7 +63,7 @@
 				</div>
 				<div class="form-group">
 					<input type="text" name="username" class="form-control"
-						id="login-form_username" placeholder="Enter Username"
+						id="register-username" placeholder="Enter Username"
 						autocomplete="off" required>
 				</div>
 				<div class="form-group">
@@ -84,26 +81,29 @@
 						placeholder="Confirm password" required>
 				</div>
 				<input type="hidden" name="_csrf" value="{{token}}" />
-				<button type="submit" class="submit_button" id="login-form_button">
-					Regi<span>s</span>ter
-				</button>
+
+				<div class="control-group">
+					<div class="controls">
+						<button type="submit" class="submit_button" id="register">
+							Regi<span>s</span>ter
+						</button>
+					</div>
+				</div>
 			</div>
 		</form>
 		<br> <br>
 		<h1>
 			Already have <span>account</span>?
 		</h1>
-		<a href="/login" data-after="Login">LogIn</a>
+		<a href="/login" data-after="Login"><h2>LogIn</h2></a>
 
 	</div>
 
 	<!-- Javascript -->
-	<script src="/assets/js/supersized.3.2.7.min.js"></script>
-	<script src="/assets/js/supersized-init.js"></script>
 	<script src="/assets/js/app.js"></script>
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+	<script src="/assets/js/register.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- End of Javascript -->
 </body>
 <div style="text-align: center;"></div>
 

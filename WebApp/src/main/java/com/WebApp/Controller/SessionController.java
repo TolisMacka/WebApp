@@ -1,4 +1,4 @@
-package com.WebApp.web;
+package com.WebApp.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,6 @@ public class SessionController {
     public void addAttributes(Model model, HttpServletRequest request) {
 		model.addAttribute("logged",session.getIsLogggedIn());
 		model.addAttribute("session", session);
-		model.addAttribute("isAdmin", request.isUserInRole("ADMIN"));
 
     }
 	

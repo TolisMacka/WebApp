@@ -13,7 +13,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import com.WebApp.domain.User;
+import com.WebApp.back.User;
 import com.WebApp.services.UserService;
 
 @Component

@@ -2,55 +2,45 @@
 <html class="no-js" lang="">
 
 <head>
+<meta charset="UTF-8">
 {{>components/html_head}}
-<meta charset="utf-8">
 
 </head>
 
 <body>
 	<section id="header">
-	<div class="header container">
-		<div class="nav-bar">
-			<div class="brand">
-				<a href="#hero">
-					<h1>
-						CA<span>S</span>UAL<span>S</span>
-					</h1>
-				</a>
-			</div>
-			<div class="nav-list">
-				<div class="hamburger">
-					<div class="bar"></div>
+		<div class="header container">
+			<div class="nav-bar">
+				<div class="brand">
+					<a href="/index">
+						<h1>
+							CA<span>S</span>UAL<span>S</span>
+						</h1>
+					</a>
 				</div>
-				<ul>
-					<li><a href="/" data-after="Home">Home</a></li>
-				</ul>
+				<div class="nav-list">
+					<div class="hamburger">
+						<div class="bar"></div>
+					</div>
+					<ul>
+						<li><a href="/" data-after="Home">Home</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
-
-	<br>
-	<br>
-
-	<div class="container center-h center-v">
-		<div class="row">
-			<div class="col-8">
-				<img src="/assets/img/otros/log_error_polol.jpg">
+	</section>
+	<section id="LogInError">
+		<div class="error container">
+			<div>
+				<h1>Something went wrong</h1><br>
+				<h1>please try again</h1>
+				<a href="/login" type="button" class="cta">Try again</a>
 			</div>
 		</div>
-	</div>
-
-	<br>
-
-	<div class="container center-h center-v">
-		<div class="row">
-			<div class="col-10">
-				<a class="btn btn-primary" id="try_again" href="/login">LOGIN</a>
-			</div>
-		</div>
-	</div>
-
+	</section>
+	<!-- Javascript -->
+	<script src="/assets/js/app.js" type="text/javascript"></script>
+	<!-- End of Javascript -->
 </body>
 
 </html>

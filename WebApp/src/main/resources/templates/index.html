@@ -11,48 +11,37 @@
 	<!-- Header -->
 	<section id="header">
 		<div class="header container">
-	<div class="nav-bar">
-		<div class="brand">
-			<a href="#hero">
-				<h1>
-					CA<span>S</span>UAL<span>S</span>
-				</h1>
-			</a>
-		</div>
-		<div class="nav-list">
-			<div class="hamburger">
-				<div class="bar"></div>
+			<div class="nav-bar">
+				<div class="brand">
+					<a href="#hero">
+						<h1>
+							CA<span>S</span>UAL<span>S</span>
+						</h1>
+					</a>
+				</div>
+				<div class="nav-list">
+					<div class="hamburger">
+						<div class="bar"></div>
+					</div>
+					<ul>
+						<li><a href="#hero" data-after="Home">Home</a></li>
+						<li><a href="#guilds" data-after="Guilds">Guilds</a></li>{{#logged}}
+						<li><a href="#projects" data-after="Guides">Guides</a></li>{{/logged}}
+						<li><a href="#about" data-after="About">About</a></li> {{#logged}}
+						<li><a href="#" data-after="Profile">Profile</a></li>
+						<li><a href="/logOut" data-after="Logout">Logout</a></li>{{/logged}}
+						{{^logged}}
+						<li><a href="/login" data-after="login">LogIn</a></li>
+						<li><a href="/register" data-after="register">register</a></li>{{/logged}}
+					</ul>
+				</div>
 			</div>
-			<ul>
-				<li><a href="#hero" data-after="Home">Home</a></li>
-				<li><a href="#services" data-after="Service">Services</a></li>
-				<li><a href="#projects" data-after="Projects">Projects</a></li>
-				<li><a href="#about" data-after="About">About</a></li> {{#logged}}
-				<li class="nav-item dropdown"><a
-					class="nav-link dropdown-toggle" id="header_usr_dropdown"
-					role="button" data-toggle="dropdown" href="#">@{{session.username}}<img
-						src="/assets/img/cupula/placeholder_user_man.png"
-						class="rounded-circle" id="header_profile_image" width="50"
-						height="50"></a>
-					<div class="dropdown-menu">
-						{{#isAdmin}} <a class="dropdown-item" href="/dashboard">Admin
-							Dashboard</a> {{/isAdmin}} <a class="dropdown-item" href="/profile">Profile</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="/logOut">Logout</a>
-					</div></li> {{/logged}} {{^logged}}
-				<li class="nav-item"><a class="btn btn-primary"
-					id="login_button" href="/login">Login</a></li>
-				<li class="nav-item"><a class="btn btn-primary"
-					id="register_button" href="/register">Register</a></li> {{/logged}}
-			</ul>
 		</div>
-	</div>
-</div>
 	</section>
 	<!-- End Header -->
 
 
-	<!-- First Section  -->
+	<!-- Hero Section  -->
 	<section id="hero">
 		<div class="hero container">
 			<div>
@@ -65,149 +54,165 @@
 				<h1>
 					CASUALS <span></span>
 				</h1>
-				<a href="#services" type="button" class="cta">Read more</a>
+				<a href="#guilds" type="button" class="cta">Read more</a>
 			</div>
 		</div>
 	</section>
-	<!-- End First Section  -->
+	<!-- End Hero Section  -->
 
 	<!-- Service Section -->
-	<section id="services">
+	<section id="guilds">
 		<div class="services container">
 			<div class="service-top">
 				<h1 class="section-title">
-					Serv<span>i</span>ces
+					Guild<span>S</span>
 				</h1>
-				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-					Ipsum deleniti maiores pariatur assumenda quas magni et, doloribus
-					quod voluptate quasi molestiae magnam officiis dolorum, dolor
-					provident atque molestias voluptatum explicabo!</p>
+				<p>
+					We are international guild with people coming toghether, all over
+					the world with the same goal in mind to be<br> THE BEST
+				</p>
 			</div>
 			<div class="service-bottom">
 				<div class="service-item">
 					<div class="icon">
-						<img src="https://img.icons8.com/fluent/100/000000/creativity.png" />
+						<img src="/assets/img/EU.png" />
 					</div>
-					<h2>Web Design</h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Corporis debitis rerum, magni voluptatem sed architecto placeat
-						beatae tenetur officia quod</p>
+					<h2>CASUALS 1</h2>
+					<p>One of the first casuals guild</p>
 				</div>
 				<div class="service-item">
 					<div class="icon">
-						<img
-							src="https://img.icons8.com/fluent/100/000000/critical-thinking.png" />
+						<img src="/assets/img/USA.png" />
 					</div>
-					<h2>Web Design</h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Corporis debitis rerum, magni voluptatem sed architecto placeat
-						beatae tenetur officia quod</p>
+					<h2>CASUALS 2</h2>
+					<p>Made and Lad by Fishtix, Koreas and Hashimaru</p>
 				</div>
 				<div class="service-item">
 					<div class="icon">
-						<img src="https://img.icons8.com/fluent/100/000000/idea.png" />
+						<img src="/assets/img/SRB.png" />
 					</div>
-					<h2>Web Design</h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Corporis debitis rerum, magni voluptatem sed architecto placeat
-						beatae tenetur officia quod</p>
-				</div>
-				<div class="service-item">
-					<div class="icon">
-						<img src="https://img.icons8.com/fluent/100/000000/statistics.png" />
-					</div>
-					<h2>Web Design</h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Corporis debitis rerum, magni voluptatem sed architecto placeat
-						beatae tenetur officia quod</p>
+					<h2>
+						CASUALS <span>3</span>
+					</h2>
+					<p>Casuals 3 was made out of desire to expand and collect
+						people from East region of World</p>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!-- End Service Section -->
 
-	<!-- Projects Section -->
+	<!-- Guides Section -->
 	<section id="projects">
+		{{#logged}}
 		<div class="projects container">
 			<div class="projects-header">
 				<h1 class="section-title">
-					Recent <span>Projects</span>
+					Recent <span>Guides</span>
 				</h1>
 			</div>
 			<div class="all-projects">
+
 				<div class="project-item">
 					<div class="project-info">
 						<h1>Abyssal Expedition</h1>
-						<h2>Guide</h2>
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-							Ad, iusto cupiditate voluptatum impedit unde rem ipsa distinctio
-							illum quae mollitia ut, accusantium eius odio ducimus illo neque
-							atque libero non sunt harum? Ipsum repellat animi, fugit
-							architecto voluptatum odit et!</p>
+						<h2>Here's additional tips</h2>
+						<p>Abyssal Expedition takes the 'AFK' out of AFK Arena. If you
+							look classically at the infrastructures that have the most
+							success in the past with this event, they rely on a rigidity -
+							whether it is in their division of labor, disciplined schedules,
+							and forced cooperation.</p>
+						<a
+							href="https://www.reddit.com/r/afkarena/comments/j36xzf/visual_guide_to_pushing_abyssal_expedition_ft/"
+							target="_blank" class="cta">Read more</a>
 					</div>
 					<div class="project-img">
-						<img src="../static/img/abbysal.jpg" alt="img">
+						<a href="https://i.redd.it/eh3hpb8d0hq51.png" target="_blank">
+							<img src="https://i.redd.it/eh3hpb8d0hq51.png" alt="img">
+						</a>
 					</div>
 				</div>
 				<div class="project-item">
 					<div class="project-info">
-						<h1>Arcane Labyrinth</h1>
-						<h2>Coding is Love</h2>
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-							Ad, iusto cupiditate voluptatum impedit unde rem ipsa distinctio
-							illum quae mollitia ut, accusantium eius odio ducimus illo neque
-							atque libero non sunt harum? Ipsum repellat animi, fugit
-							architecto voluptatum odit et!</p>
+						<h1>PVP</h1>
+						<h2>Advance PVP formation</h2>
+						<p>Abyssal Expedition takes the 'AFK' out of AFK Arena. If you
+							look classically at the infrastructures that have the most
+							success in the past with this event, they rely on a rigidity -
+							whether it is in their division of labor, disciplined schedules,
+							and forced cooperation.</p>
+						<a
+							href="https://www.reddit.com/r/afkarena/comments/iup7cv/newtons_advanced_pvp_formation_guide_zolrath_burst/"
+							target="_blank" class="cta">Read more</a>
 					</div>
 					<div class="project-img">
-						<img src="../static/img/Lab_Path.jfif" alt="img">
+						<a href="https://i.redd.it/b02scsku2rn51.png" target="_blank">
+							<img src="https://i.redd.it/b02scsku2rn51.png" alt="img">
+						</a>
 					</div>
 				</div>
 				<div class="project-item">
 					<div class="project-info">
-						<h1>The Twisted Realm</h1>
-						<h2>Coding is Love</h2>
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-							Ad, iusto cupiditate voluptatum impedit unde rem ipsa distinctio
-							illum quae mollitia ut, accusantium eius odio ducimus illo neque
-							atque libero non sunt harum? Ipsum repellat animi, fugit
-							architecto voluptatum odit et!</p>
+						<h1>Lost Sigil</h1>
+						<h2>Visual Guide</h2>
+						<p>Abyssal Expedition takes the 'AFK' out of AFK Arena. If you
+							look classically at the infrastructures that have the most
+							success in the past with this event, they rely on a rigidity -
+							whether it is in their division of labor, disciplined schedules,
+							and forced cooperation.</p>
+						<a
+							href="https://www.reddit.com/r/afkarena/comments/itq25m/visual_guide_to_lost_sigils_sept_updated_reupload/"
+							target="_blank" class="cta">Read more</a>
 					</div>
 					<div class="project-img">
-						<img src="../static/img/Brutus.jfif" alt="img">
+						<a href="https://i.redd.it/r29fmvslagn51.png" target="_blank">
+							<img src="https://i.redd.it/r29fmvslagn51.png" alt="img">
+						</a>
 					</div>
 				</div>
 				<div class="project-item">
 					<div class="project-info">
 						<h1>Legend Championship</h1>
-						<h2>Coding is Love</h2>
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-							Ad, iusto cupiditate voluptatum impedit unde rem ipsa distinctio
-							illum quae mollitia ut, accusantium eius odio ducimus illo neque
-							atque libero non sunt harum? Ipsum repellat animi, fugit
-							architecto voluptatum odit et!</p>
+						<h2>8th September</h2>
+						<p>Abyssal Expedition takes the 'AFK' out of AFK Arena. If you
+							look classically at the infrastructures that have the most
+							success in the past with this event, they rely on a rigidity -
+							whether it is in their division of labor, disciplined schedules,
+							and forced cooperation.</p>
+						<a
+							href="https://www.reddit.com/r/afkarena/comments/ishf7a/legends_championship_meta_snapshot_8th_september/"
+							target="_blank" class="cta">Read more</a>
 					</div>
 					<div class="project-img">
-						<img src="../static/img/download.png" alt="img">
+						<a href="https://i.redd.it/tkhy6jwow2n51.png" target="_blank">
+							<img src="https://i.redd.it/tkhy6jwow2n51.png" alt="img">
+						</a>
 					</div>
 				</div>
 				<div class="project-item">
 					<div class="project-info">
-						<h1>King's Tower</h1>
-						<h2>Coding is Love</h2>
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-							Ad, iusto cupiditate voluptatum impedit unde rem ipsa distinctio
-							illum quae mollitia ut, accusantium eius odio ducimus illo neque
-							atque libero non sunt harum? Ipsum repellat animi, fugit
-							architecto voluptatum odit et!</p>
+						<h1>Cheatsheet</h1>
+						<h2>everything you need</h2>
+						<p>Abyssal Expedition takes the 'AFK' out of AFK Arena. If you
+							look classically at the infrastructures that have the most
+							success in the past with this event, they rely on a rigidity -
+							whether it is in their division of labor, disciplined schedules,
+							and forced cooperation.</p>
+						<a
+							href="https://www.reddit.com/r/afkarena/comments/iq3lnb/afk_arena_cheatsheet_updated_now_merged_with_pve/"
+							target="_blank" class="cta">Read more</a>
 					</div>
 					<div class="project-img">
-						<img src="" alt="img">
+						<a href="https://i.redd.it/iqpuctzjrbm51.png" target="_blank">
+							<img src="https://i.redd.it/iqpuctzjrbm51.png" alt="img">
+						</a>
 					</div>
 				</div>
 			</div>
 		</div>
+		{{/logged}}
 	</section>
+
 	<!-- End Projects Section -->
 
 	<!-- About Section -->
@@ -215,18 +220,19 @@
 		<div class="about container">
 			<div class="col-left">
 				<div class="about-img">
-					<img src="/assets/img/760426912869777469.gif" alt="img">
+					<img src="/assets/img/760691687172866058.gif" alt="img">
 				</div>
 			</div>
 			<div class="col-right">
 				<h1 class="section-title">
 					About <span>us</span>
 				</h1>
-				<h2>CASUALS</h2>
-				<p>We roll!</p>
-				<br> <a href="#" class="cta">Join us</a>
+				<h2>We Roll!</h2>
+				<p>Create a account to get access to full webpage</p>
+				<br> <a href="/register" class="cta">Join us</a>
 			</div>
 		</div>
+
 	</section>
 	<!-- End About Section -->
 
@@ -237,11 +243,10 @@
 				<h1>
 					CA<span>S</span>UAL<span>S</span>
 				</h1>
-			</div>
-			<h2>Join us</h2>
+			</div><br>
 			<div class="social-icon">
 				<div class="social-item">
-					<a href="https://discord.gg/qa9WTq3"><img
+					<a href="https://discord.gg/afkarena"><img
 						src="https://img.icons8.com/cute-clipart/64/000000/discord-logo.png" /></a>
 				</div>
 			</div>

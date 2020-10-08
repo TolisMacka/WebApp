@@ -1,4 +1,4 @@
-package com.WebApp.domain;
+package com.WebApp.back;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import com.WebApp.domain.User.Basic;
+import com.WebApp.back.User.Basic;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
 

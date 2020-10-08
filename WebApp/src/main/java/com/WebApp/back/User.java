@@ -1,4 +1,4 @@
-package com.WebApp.domain;
+package com.WebApp.back;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,7 +34,6 @@ public class User {
 
 	private String passwordHash;
 
-	// do not put @JsonIgnore
 	@JsonView(Basic.class)
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> roles;

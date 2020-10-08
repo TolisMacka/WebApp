@@ -1,4 +1,4 @@
-package com.WebApp.security;
+package com.WebApp;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

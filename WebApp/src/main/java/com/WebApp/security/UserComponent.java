@@ -3,7 +3,7 @@ package com.WebApp.security;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 
-import com.WebApp.domain.User;
+import com.WebApp.back.User;
 
 @Component
 @SessionScope

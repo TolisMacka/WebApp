@@ -2,7 +2,7 @@ package com.WebApp.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.WebApp.domain.User;
+import com.WebApp.back.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 

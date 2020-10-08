@@ -1,4 +1,4 @@
-package com.WebApp.web;
+package com.WebApp.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.WebApp.domain.Role;
-import com.WebApp.domain.User;
+import com.WebApp.back.Role;
+import com.WebApp.back.User;
 import com.WebApp.services.RoleService;
 import com.WebApp.services.UserService;
 

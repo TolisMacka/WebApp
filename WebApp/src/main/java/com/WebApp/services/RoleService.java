@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.WebApp.domain.Role;
-import com.WebApp.domain.User;
+import com.WebApp.back.Role;
+import com.WebApp.back.User;
 import com.WebApp.repositories.RoleRepository;
 
 @Service
